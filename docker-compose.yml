@@ -1,0 +1,36 @@
+version: '3.3'
+
+services:
+  # MYSQL Database
+  db:
+    image: mysql:latest
+    container_name: assignment2DBModules
+    hostname: db
+    networks:
+      - modulemanagementnetwork
+    environment:
+      MYSQL_HOST: host.docker.internal
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: assignment2
+    deploy:
+      restart_policy:
+        condition: on-failure
+    volumes:
+      - modulemanagementvolume:/var/lib/mysql
+
+  # Module Microservice
+  modulecontainer:
+    container_name: modulecontainer
+    depends_on:
+      - db
+    build:
+      context: ./modules
+      dockerfile: Dockerfile.main
+    ports:
+      - 9141:9141
+networks:
+  modulemanagementnetwork: 
+    driver: bridge
+volumes:
+  modulemanagementvolume: null
