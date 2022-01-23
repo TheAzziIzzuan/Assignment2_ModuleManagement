@@ -29,8 +29,12 @@ services:
       dockerfile: Dockerfile.main
     ports:
       - 9141:9141
+    networks:
+      - modulemanagementnetwork
+
 networks:
   modulemanagementnetwork: 
     driver: bridge
+
 volumes:
   modulemanagementvolume: null
