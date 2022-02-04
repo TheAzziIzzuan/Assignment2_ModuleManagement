@@ -8,6 +8,7 @@ import (
 	"net/http"
 
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -32,8 +33,13 @@ func DataMigrations() { //Using Gorm to Connect to database and check if it has 
 
 func main() { /*Connect to DB*/
 	DataMigrations()
-
 	router := mux.NewRouter()
+
+	// This is to allow the headers, origins and methods all to access CORS resource sharing
+	headers := handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"})
+	origins := handlers.AllowedOrigins([]string{"*"})
+	methods := handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE"})
+
 	router.HandleFunc("/api/v1/module/create", CreateModules).Methods("POST")
 	router.HandleFunc("/api/v1/modules/", GetAllModules).Methods("GET")
 	router.HandleFunc("/api/v1/module/{modulecode}", GetModules).Methods("GET")
@@ -42,9 +48,8 @@ func main() { /*Connect to DB*/
 	router.HandleFunc("/api/v1/module/tutor/{modulecode}", GetAllTutorByModuleCode).Methods("GET")
 	router.HandleFunc("/api/v1/module/delete/{modulecode}", DeleteModule).Methods("DELETE")
 
-	http.ListenAndServe(":9141", router)
 	fmt.Println("Listening at port 9141")
-	log.Fatal(http.ListenAndServe(":9141", router))
+	log.Fatal(http.ListenAndServe(":9141", handlers.CORS(headers, origins, methods)(router)))
 }
 
 type Modules struct {
@@ -64,7 +69,14 @@ type ModuleTutor struct {
 }
 
 //type Tutor struct {
-//Input 3.3 Api Struct//
+type Tutor struct {
+	Deleted      gorm.DeletedAt
+	TutorID      int    `gorm:"primaryKey"`
+	FirstName    string `json:"firstname" validate:"required"`
+	Lastname     string `json:"lastname" validate:"required"`
+	Email        string `json:"email" validate:"required,email"`
+	Descriptions string `json:"descriptions" validate:"required"`
+}
 
 //Function to Create Modules
 func CreateModules(w http.ResponseWriter, r *http.Request) {
@@ -189,7 +201,6 @@ func UpdateModule(w http.ResponseWriter, router *http.Request) {
 	} else {
 		json.NewDecoder(router.Body).Decode(&module)
 		db.Model(&Modules{}).Where("module_code=?", params["modulecode"]).Updates(module)
-		db.Model(&ModuleTutor{}).Where("module_code=?", params["modulecode"]).Updates(module)
 	}
 }
 
