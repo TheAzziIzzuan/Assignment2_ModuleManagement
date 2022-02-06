@@ -40,6 +40,7 @@ Welcome to Getaride a simple ride hailing program made with GOLANG and GORM, inv
 * [GORM](https://gorm.io/index.html)
 * [MYSQL](https://www.mysql.com/)
 * [JAVASCRIPT](https://www.javascript.com/)
+* [NGIX](https://www.nginx.com/)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
