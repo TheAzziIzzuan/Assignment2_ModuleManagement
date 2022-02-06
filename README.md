@@ -159,7 +159,7 @@ GOLANG and MYSQL must be installed in order for the program to work
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### Module Data Structure
+## Module Data Structure
 | Attribute | Data Type |
 | --------- | ---- |
 | ModuleID | int |
@@ -172,14 +172,18 @@ GOLANG and MYSQL must be installed in order for the program to work
 ### Rating Data Structure
 | Attribute | Data Type |
 | --------- | ---- |
-| RatingID | uint |
-| CreatorType | varchar(255) |
-| CreatorID | varchar(9) |
-| TargetType | varchar(255) |
-| TargetID | varchar(9) |
-| RatingScore | varchar(500) |
-| Anonymous | bool |
-| DateTimePublished | datetime |
+| TutorID | int |
+| Name | string) |
+| Email | string |
+| Descriptions | string |
+| ModuleID | int |
+| ModuleCode | string(500) |
+| ModuleName | string |
+| Synopsis | string |
+| LearningObjective | string |
+| Deleted | gorm.DeletedAt |
+
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
