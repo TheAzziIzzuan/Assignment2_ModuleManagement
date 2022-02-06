@@ -37,6 +37,8 @@ services:
       context: ./FrontEnd
     image: azzi_modulefrontend
     container_name: azzi_modulefrontend
+    depends_on:
+      - modulecontainer
     ports: 
       - "9140:80"
     environment:
