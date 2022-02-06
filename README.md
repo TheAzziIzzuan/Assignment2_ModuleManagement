@@ -116,13 +116,13 @@ GOLANG and MYSQL must be installed in order for the program to work
    ```
 3. Database is not required to execute as gorm will automatically create the tables and database.
 
-**Docker Hub Links**
 
-- [Ratings Microservice](https://hub.docker.com/repository/docker/ethanhaseaten/etiassignment2ratingdb)
-- [Ratings Database](https://hub.docker.com/repository/docker/ethanhaseaten/etiassignment2ratingdb)
-- [Comments Microservice](https://hub.docker.com/repository/docker/ethanhaseaten/commentcontainer)
-- [Comments Database](https://hub.docker.com/repository/docker/ethanhaseaten/etiassignment2commentdb)
-- [Frontend](https://hub.docker.com/repository/docker/ethanhaseaten/frontendcontainer)
+
+**4. Docker Hub Links**
+
+- [Module Microservice Container](https://hub.docker.com/repository/docker/azziizzuan/assignment2_backendmodulemanagementcontainer)
+- [Module Frontend Container](https://hub.docker.com/repository/docker/azziizzuan/assignment2_frontendmodulemanagementcontainer)
+- [Module Database](https://hub.docker.com/repository/docker/azziizzuan/assignment2_databasemodulemanagementcontainer)
    
     
 <p align="right">(<a href="#top">back to top</a>)</p>
