@@ -158,6 +158,30 @@ GOLANG and MYSQL must be installed in order for the program to work
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+### Module Data Structure
+| Attribute | Data Type |
+| --------- | ---- |
+| ModuleID | int |
+| ModuleCode | string |
+| ModuleName | string |
+| Synopsis | string |
+| LearningObjective | string |
+| Deleted | gorm.DeletedAt |
+
+### Rating Data Structure
+| Attribute | Data Type |
+| --------- | ---- |
+| RatingID | uint |
+| CreatorType | varchar(255) |
+| CreatorID | varchar(9) |
+| TargetType | varchar(255) |
+| TargetID | varchar(9) |
+| RatingScore | varchar(500) |
+| Anonymous | bool |
+| DateTimePublished | datetime |
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 # Module Microservice API Documentation
 ### [GET] /api/v1/modules/
 Get all Module
