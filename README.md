@@ -105,7 +105,7 @@ GOLANG and MYSQL must be installed in order for the program to work
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/theazziizzuan/ETIAssignment1-Azzi.git
+   git clone https://github.com/TheAzziIzzuan/Assignment2_ModuleManagement.git
    ```
 2. Install libraries
    ```sh
@@ -114,7 +114,7 @@ GOLANG and MYSQL must be installed in order for the program to work
     go get -u github.com/gorilla/handlers
     go get -u gorm.io/gorm
    ```
-3. Execute database script located in /database/Execute Database.sql
+3. Database is not required to execute as gorm will automatically create the tables and database.
     
     
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -126,22 +126,19 @@ GOLANG and MYSQL must be installed in order for the program to work
 
 1. Start the Microservices
    ```sh
-   cd /Assignment1/Passenger
-   go run Passenger.go
+   cd ETIAssignment2-Docker\modules
+   go run main.go
    ```
-    ```sh
-   cd /Assignment1/Driver
-   go run Driver.go
-   ```
-    ```sh
-   cd /Assignment1/Trip
-   go run Trip.go 
-   ```
+
    
-2. Start the console app
+2. Start the front end by clicking on the file in the folder /FrontEnd
    ```sh
-    cd /Assignment1/Console
-    go run main.go
+    In the Folder include this html files
+    index.html 
+    AssignModule.html 
+    CreateModule.html 
+    GetModule.html
+    UpdateModule.html
    ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
