@@ -163,19 +163,16 @@ http://10.31.11.12:9141/api/v1/modules/
 |learningobjective|string|notrequired|An summary of learning objective|
 
 Example Request
-
-cURL
-
+```
+cURL:
 curl  --request GET 'http://localhost:9141/api/v1/modules/' or 'http://10.31.11.12:9140/api/v1/modules/'
-
-
-Windows cURL
-
-curl  --request GET 'http://localhost:9141/api/v1/modules/' or 'http://10.31.11.12:9140/api/v1/modules/'
-
-Response
-
+Response:
 The response will be a status code 200 is successful, return with all module that have been created
+```
+
+
+
+
 
 
 ### [GET] /api/v1/tutor/profile/{TutorID}
