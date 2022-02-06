@@ -115,13 +115,12 @@ GOLANG and MYSQL must be installed in order for the program to work
     go get -u gorm.io/gorm
    ```
 3. Database is not required to execute as gorm will automatically create the tables and database, However editing of connection string and localhost is needed to use on local or docker hub
-```sh
+    ```sh
     To use on local machine edit main.go line 58 to "root:root@tcp(127.0.0.1:3306)/assignment2?charset=utf8mb4&parseTime=True&loc=Local"
     To use on docker edit main.go line 58 to "root:root@tcp(db:3306)/assignment2"
     
-    To use on localmachine for front end, In every .js inside the frontend folder, change the follow eg: "http://10.31.11.12:9141/"; to "http://localhost:9141/"
-    
-    To use on docker for front end, In every .js inside the frontend folder, change the follow eg: "http://localhost:9141/"; to "http://10.31.11.12:9141/"
+    To use on localmachine for frontend, In every .js inside the frontend folder, change the follow eg: "http://10.31.11.12:9141/"; to "http://localhost:9141/"
+    To use on docker for frontend, In every .js inside the frontend folder, change the follow eg: "http://localhost:9141/"; to "http://10.31.11.12:9141/"
     
     
    ```
