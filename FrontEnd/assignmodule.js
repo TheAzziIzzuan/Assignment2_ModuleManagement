@@ -47,7 +47,7 @@ function getModule() { //get module using api
     dropdown.add(defaultOption);
     dropdown.selectedIndex = 0;
 
-    const url = "http://localhost:9141/api/v1/modules/"; //Get api of modules
+    const url = "http://10.31.11.12:9141/api/v1/modules/"; //Get api of modules
 
     fetch(url)
         .then(function(response) {
@@ -87,7 +87,7 @@ function getTutor() { //get Tutor using api
     dropdown.add(defaultOption);
     dropdown.selectedIndex = 0;
 
-    const url = "http://localhost:9181/api/v1/GetAllTutor";
+    const url = "http://10.31.11.12:9181/api/v1/GetAllTutor";
 
     fetch(url)
         .then(function(response) {
@@ -128,7 +128,7 @@ function assignTutor(e) { //get the value of moduletutor table in the backend an
     var synopsis = document.getElementById("synopsis").value;
     var learningobjective = document.getElementById("learningobjective").value;
 
-    fetch("http://localhost:9141/api/v1/module/assign", {
+    fetch("http://10.31.11.12:9141/api/v1/module/assign", {
         method: "PUT",
         body: JSON.stringify({
             tutorid: parseInt(tutor_id),

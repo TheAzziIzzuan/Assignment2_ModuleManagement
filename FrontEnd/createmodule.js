@@ -11,7 +11,7 @@ function createModule() {
         var synopsis = document.getElementById("synopsis").value;
         var learningobjective = document.getElementById("learningobjective").value;
 
-        fetch("http://localhost:9141/api/v1/module/create", {
+        fetch("http://10.31.11.12:9141/api/v1/module/create", {
             method: "POST",
             body: JSON.stringify({
                 modulecode: modulecode,

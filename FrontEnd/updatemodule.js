@@ -15,7 +15,7 @@ function updateModule() { //update using update module api
         var synopsis = document.getElementById("synopsis").value;
         var learningobjective = document.getElementById("learningobjective").value;
 
-        fetch("http://localhost:9141/api/v1/module/change/" + chosenModuleCode, {
+        fetch("http://10.31.11.12:9141/api/v1/module/change/" + chosenModuleCode, {
             method: "PUT",
             body: JSON.stringify({
                 modulecode: modulecode,
@@ -65,7 +65,7 @@ function getModule() { //uses getallmodules api
     dropdown.add(defaultOption);
     dropdown.selectedIndex = 0;
 
-    const url = "http://localhost:9141/api/v1/modules/";
+    const url = "http://10.31.11.12:9141/api/v1/modules/";
 
     fetch(url)
         .then(function(response) {
@@ -107,7 +107,7 @@ function deleteModule() {
         var synopsis = document.getElementById("synopsis").value;
         var learningobjective = document.getElementById("learningobjective").value;
 
-        fetch("http://localhost:9141/api/v1/module/delete/" + chosenModuleCode, {
+        fetch("http://10.31.11.12:9141/api/v1/module/delete/" + chosenModuleCode, {
             method: "DELETE",
             body: JSON.stringify({
                 modulecode: modulecode,
@@ -124,7 +124,7 @@ function deleteModule() {
                 return;
             } else {
                 alert("Delete Success!");
-                fetch(`http://localhost:9101/api/v1/class?ModuleCode=${chosenModuleCode}&key=2c78afaf-97da-4816-bbee-9ad239abb296`, {
+                fetch(`http://10.31.11.12:9101/api/v1/class?ModuleCode=${chosenModuleCode}&key=2c78afaf-97da-4816-bbee-9ad239abb296`, {
                     method: "DELETE",
                     body: JSON.stringify({
                         modulecode: modulecode,

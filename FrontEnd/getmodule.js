@@ -24,7 +24,7 @@ function searchModule() { //sets the row of each module information to the table
 }
 
 async function displayAllModuleAPI() { //display using get all modules part
-    const response = await fetch("http://localhost:9141/api/v1/modules/");
+    const response = await fetch("http://10.31.11.12:9141/api/v1/modules/");
     data = await response.json();
 
     const tableData = data
