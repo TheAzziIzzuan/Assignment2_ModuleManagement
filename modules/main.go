@@ -35,16 +35,17 @@ func main() { /*Connect to DB*/
 	origins := handlers.AllowedOrigins([]string{"*"})                                                 //CORS handler
 	methods := handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE"})                      //CORS handler
 
-	router.HandleFunc("/api/v1/module/create", CreateModules).Methods("POST")                              //Create Module
-	router.HandleFunc("/api/v1/modules/", GetAllModules).Methods("GET")                                    //Get all Module
-	router.HandleFunc("/api/v1/module/{modulecode}", GetModules).Methods("GET")                            //Show module information by module code
-	router.HandleFunc("/api/v1/module/assign", AssignModuleToTutor).Methods("PUT")                         //Assign Module to tutor via put
-	router.HandleFunc("/api/v1/module/change/{modulecode}", UpdateModule).Methods("PUT")                   //update module by modulecode
-	router.HandleFunc("/api/v1/module/tutor/{modulecode}", GetAllTutorByModuleCode).Methods("GET")         //List all tutor that is teaching that specific module
-	router.HandleFunc("/api/v1/module/alltutor/{tutor_id}", GetAllTutorModuleByTutorId).Methods("GET")     //List all of the specific tutor by tutor id
-	router.HandleFunc("/api/v1/module/alltutorname/{name}", GetAllTutorModuleByTutorName).Methods("GET")   //List all of the specific tutor by tutor name
-	router.HandleFunc("/api/v1/module/delete/{modulecode}", DeleteModule).Methods("DELETE")                //Delete module by modulecode
-	router.HandleFunc("/api/v1/module/deleteassignedtutor/{email}", DeleteAssignedTutor).Methods("DELETE") // Delete assigned tutors in the moduletutor table
+	router.HandleFunc("/api/v1/module/create", CreateModules).Methods("POST")                                    //Create Module
+	router.HandleFunc("/api/v1/modules/", GetAllModules).Methods("GET")                                          //Get all Module
+	router.HandleFunc("/api/v1/module/{modulecode}", GetModules).Methods("GET")                                  //Show module information by module code
+	router.HandleFunc("/api/v1/module/assign", AssignModuleToTutor).Methods("PUT")                               //Assign Module to tutor via put
+	router.HandleFunc("/api/v1/module/change/{modulecode}", UpdateModule).Methods("PUT")                         //update module by modulecode
+	router.HandleFunc("/api/v1/module/tutor/{modulecode}", GetAllTutorByModuleCode).Methods("GET")               //List all tutor that is teaching that specific module
+	router.HandleFunc("/api/v1/module/alltutor/{tutor_id}", GetAllTutorModuleByTutorId).Methods("GET")           //List all of the specific tutor by tutor id
+	router.HandleFunc("/api/v1/module/alltutorname/{name}", GetAllTutorModuleByTutorName).Methods("GET")         //List all of the specific tutor by tutor name
+	router.HandleFunc("/api/v1/module/delete/{modulecode}", DeleteModule).Methods("DELETE")                      //Delete module by modulecode
+	router.HandleFunc("/api/v1/module/deleteassignedtutor/{email}", DeleteAssignedTutor).Methods("DELETE")       // Delete assigned tutors in the moduletutor table
+	router.HandleFunc("/api/v1/module/tutor/updateassignedtutor/{email}", DeleteAssignedTutor).Methods("DELETE") // Update assigned tutors in the moduletutor table
 
 	fmt.Println("Listening at port 9141")
 	log.Fatal(http.ListenAndServe(":9141", handlers.CORS(headers, origins, methods)(router))) //CORS handler
@@ -281,4 +282,20 @@ func DeleteAssignedTutor(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "not found")
 	}
 
+}
+
+func UpdateAssignedtutor(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	params := mux.Vars(r)       //mux parameter
+	var moduletutor ModuleTutor //create moduletutor struct using
+
+	if err != nil { //if error
+		fmt.Printf("Module not found")
+		return
+	} else { //if success
+		json.NewDecoder(r.Body).Decode(&moduletutor)                                    //decode module variable
+		db.Model(&ModuleTutor{}).Where("email=?", params["email"]).Updates(moduletutor) //update using the parameter in moduletutor Table
+		w.WriteHeader(http.StatusAccepted)                                              //set http header
+		fmt.Fprintf(w, "Update Successful")
+	}
 }
