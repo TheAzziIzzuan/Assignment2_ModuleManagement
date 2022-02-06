@@ -88,7 +88,7 @@ Module FrontEnd
 
 Database Tables
 * Modules - Used to store Modules Information
-* ModulesTutor = Used to store and update modules that are assigned to the tutors
+* ModulesTutor - Used to store and update modules that are assigned to the tutors
 
 
 ### Prerequisites
@@ -142,15 +142,11 @@ GOLANG and MYSQL must be installed in order for the program to work
    ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+Endpoint URL
+http://10.31.11.11:8141/classOffers
 
 
-<!-- ROADMAP -->
-## Roadmap
-```sh
-- [1] Create Database
-- [2] Create Microservices REST api using GOLANG
-- [3] Console Application that call all the REST api
-```
+
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
