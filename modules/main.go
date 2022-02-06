@@ -216,7 +216,7 @@ func GetAllTutorModuleByTutorName(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r)                                            //mux parameter
 	var modules []ModuleTutor                                        //create modules variable list using moduletutor struct
-	err := db.Where("name = ?", params["name"]).Find(&modules).Error //find the input parameter in the database
+	err := db.Where("name = ?", params["Name"]).Find(&modules).Error //find the input parameter in the database
 	if err == nil {                                                  //if success
 		w.WriteHeader(http.StatusCreated)  //set http header
 		json.NewEncoder(w).Encode(modules) //encode modules variable
