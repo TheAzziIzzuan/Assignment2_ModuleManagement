@@ -152,8 +152,7 @@ GOLANG and MYSQL must be installed in order for the program to work
 
 # Module Microservice API Documentation
 ### [GET] /api/v1/modules/
-Test API if working
-```
+
 Endpoint
 http://10.31.11.12:9141/api/v1/modules/
 | Name  | Type | Required| Description |
@@ -163,17 +162,17 @@ http://10.31.11.12:9141/api/v1/modules/
 
 Response 
 Status: Tutor API is working
-```
+
 
 ### [GET] /api/v1/tutor/profile/{TutorID}
 Get tutor by TutorID
-```
+
 Endpoint
 http://10.31.11.12:9031/api/v1/tutor/profile/{TutorID}
 Response
 Status code 200 if successful, else an error code with a corresponding status message will be returned if unsuccessful. 
 Tutor 
-```
+
 
 
 
