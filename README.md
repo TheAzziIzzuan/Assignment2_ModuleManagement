@@ -157,7 +157,10 @@ Endpoint
 http://10.31.11.12:9141/api/v1/modules/
 | Name  | Type | Required| Description |
 | ------| ---- | ------- | ----------- |
-|modulecode|
+|modulecode|string|notrequired|Module Code Eg. CM, ADB, PRG1|
+|modulename|string|notrequired|An module name that matched with module code|
+|synopis|string|notrequired|An brief summary of module|
+|learningobjective|string|notrequired|An summary of learning objective|
 
 
 Response 
