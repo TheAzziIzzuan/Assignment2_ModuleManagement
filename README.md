@@ -31,7 +31,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Welcome to Getaride a simple ride hailing program made with GOLANG and GORM, involves CLI to use the application.
+EduFi Module Management, Manages EduFi module system, allows admin to create, update, delete, view modules
+and assign modules to tutors.
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
