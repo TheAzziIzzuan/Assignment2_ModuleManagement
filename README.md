@@ -55,7 +55,7 @@ and assign modules to tutors.
 
 ## Design Considerations for the microservices
 Module Microservice allows anyone that requires the usage of module to be able to get all information regarding the module and also assigned tutor.
-To ensure that the front-end is capable of displaying any necessary data that may be linked to other microservices. The back-end microservice would be linked Tutor microservice, in order to assign available tutor to created module 
+To ensure that the front-end is capable of displaying any necessary data that may be linked to other microservices. The back-end microservice would be linked Tutor microservice, in order to assign available tutor to created module. As for the backend which allows other microservices to heavily rely on module microservices, multiple function is created to allowed the display of data required by certain microservices.
 
 Gorm, is an object-relational mapping (ORM) library for dealing with relational databases. The database/sql package is used to build this gorm library. an example would be instead of using query when excuting a SQL line, instead using GORM it simplifies the execution and insertion of data in the table. Another example of using GORM is simplifying the database creation, if the table does not exist, GORM can also be used for the initial migration,creation of the database table is automatically created upon launching the API thus making database migration easier.
 
@@ -63,7 +63,7 @@ Gorm, is an object-relational mapping (ORM) library for dealing with relational 
 
 
 
-<img src="images/Architecture Diagram.jpg" alt="Logo" width="1080" height="720">
+<img src="/Architecture.png" alt="Logo" width="1080" height="720">
 
 For the Getaride application, there are 3 different microservices used and command line to execute the console application,
 The rest API communicates with the used of HTTP GET POST PUT methods, such as creating the passenger account, it will issue a POST request and from there the information that is inputted will be send to the database for storing, The logic and data handling may then be handled within each Microservice, all while adhering to the loosely coupled philosophy that Microservices is known for.
