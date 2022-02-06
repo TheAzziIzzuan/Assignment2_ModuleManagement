@@ -115,7 +115,15 @@ GOLANG and MYSQL must be installed in order for the program to work
     go get -u gorm.io/gorm
    ```
 3. Database is not required to execute as gorm will automatically create the tables and database.
-    
+
+**Docker Hub Links**
+
+- [Ratings Microservice](https://hub.docker.com/repository/docker/ethanhaseaten/etiassignment2ratingdb)
+- [Ratings Database](https://hub.docker.com/repository/docker/ethanhaseaten/etiassignment2ratingdb)
+- [Comments Microservice](https://hub.docker.com/repository/docker/ethanhaseaten/commentcontainer)
+- [Comments Database](https://hub.docker.com/repository/docker/ethanhaseaten/etiassignment2commentdb)
+- [Frontend](https://hub.docker.com/repository/docker/ethanhaseaten/frontendcontainer)
+   
     
 <p align="right">(<a href="#top">back to top</a>)</p>
 
