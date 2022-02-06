@@ -121,6 +121,7 @@ function assignTutor(e) { //get the value of moduletutor table in the backend an
 
     var tutor_id = document.getElementById("tutor_id").value;
     var email = document.getElementById("email").value;
+    var name = document.getElementById("name").value;
     var descriptions = document.getElementById("descriptions").value;
     var moduleid = document.getElementById("moduleid").value;
     var modulecode = JSON.parse(document.getElementById("modulecode").value).modulecode;
@@ -128,10 +129,11 @@ function assignTutor(e) { //get the value of moduletutor table in the backend an
     var synopsis = document.getElementById("synopsis").value;
     var learningobjective = document.getElementById("learningobjective").value;
 
-    fetch("http://10.31.11.12:9141/api/v1/module/assign", {
+    fetch("http://10.31.11.12:9141/api/v1/module/assign", { //api
         method: "PUT",
         body: JSON.stringify({
-            tutorid: parseInt(tutor_id),
+            tutor_id: parseInt(tutor_id),
+            name: name,
             email: email,
             descriptions: descriptions,
             moduleid: parseInt(moduleid),
