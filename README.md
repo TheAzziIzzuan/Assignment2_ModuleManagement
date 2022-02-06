@@ -142,8 +142,12 @@ GOLANG and MYSQL must be installed in order for the program to work
    ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-Endpoint URL
-http://10.31.11.11:8141/classOffers
+## Endpoints:
+| Microservice  | Port | Endpoint URL |
+| ------------- | ---- | ------------ |
+| Frontend  | 9030 | http://10.31.11.12:9030 |
+| Tutor API  | 9091 | http://10.31.11.12:9031 |
+| Testing API  | 9092 | http://10.31.11.12:9042 |
 
 
 
