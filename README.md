@@ -39,20 +39,16 @@ Welcome to Getaride a simple ride hailing program made with GOLANG and GORM, inv
 * [GOLANG](https://go.dev/)
 * [GORM](https://gorm.io/index.html)
 * [MYSQL](https://www.mysql.com/)
-
+* [JAVASCRIPT](https://www.javascript.com/)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 <!-- Assignment Objective-->
-## AssignmentRequirements
-
-* Minimum 2 microservices using GOLANG
-* Persistent storage of information using database
-
 ## #AssignmentObjectives
-* To be able to develop REST api
-* Able to communicate between the api's
+* To demonstrate ability to implement microservices with REST APIs in containers
+* To demonstrate ability to work with multiple teams in designing and implementing microservice architecture
+
 
 ## DesignConsiderationsforthemicroservices
 * The microservices have been created in such a way that they are uniquely individual.
