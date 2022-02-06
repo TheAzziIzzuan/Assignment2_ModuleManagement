@@ -150,7 +150,25 @@ GOLANG and MYSQL must be installed in order for the program to work
 | Testing API  | 9092 | http://10.31.11.12:9042 |
 
 
+# Tutor Microservice API Documentation
+### [GET] /api/v1/tutor
+Test API if working
+```
+Endpoint
+http://10.31.11.12:9031/api/v1/tutor
+Response 
+Status: Tutor API is working
+```
 
+### [GET] /api/v1/tutor/profile/{TutorID}
+Get tutor by TutorID
+```
+Endpoint
+http://10.31.11.12:9031/api/v1/tutor/profile/{TutorID}
+Response
+Status code 200 if successful, else an error code with a corresponding status message will be returned if unsuccessful. 
+Tutor 
+```
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
