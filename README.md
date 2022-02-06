@@ -151,11 +151,16 @@ GOLANG and MYSQL must be installed in order for the program to work
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 # Module Microservice API Documentation
-### [GET] /api/v1/tutor
+### [GET] /api/v1/modules/
 Test API if working
 ```
 Endpoint
-http://10.31.11.12:9031/api/v1/tutor
+http://10.31.11.12:9141/api/v1/modules/
+| Name  | Type | Required| Description |
+| ------| ---- | ------- | ----------- |
+|modulecode|
+
+
 Response 
 Status: Tutor API is working
 ```
