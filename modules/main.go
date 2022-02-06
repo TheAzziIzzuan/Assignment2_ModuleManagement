@@ -45,7 +45,7 @@ func main() { /*Connect to DB*/
 	router.HandleFunc("/api/v1/module/alltutorname/{name}", GetAllTutorModuleByTutorName).Methods("GET")      //List all of the specific tutor by tutor name
 	router.HandleFunc("/api/v1/module/delete/{modulecode}", DeleteModule).Methods("DELETE")                   //Delete module by modulecode
 	router.HandleFunc("/api/v1/module/deleteassignedtutor/{email}", DeleteAssignedTutor).Methods("DELETE")    // Delete assigned tutors in the moduletutor table
-	router.HandleFunc("/api/v1/module/tutor/updateassignedtutor/{email}", DeleteAssignedTutor).Methods("PUT") // Update assigned tutors in the moduletutor table
+	router.HandleFunc("/api/v1/module/tutor/updateassignedtutor/{email}", UpdateAssignedtutor).Methods("PUT") // Update assigned tutors in the moduletutor table
 
 	fmt.Println("Listening at port 9141")
 	log.Fatal(http.ListenAndServe(":9141", handlers.CORS(headers, origins, methods)(router))) //CORS handler
