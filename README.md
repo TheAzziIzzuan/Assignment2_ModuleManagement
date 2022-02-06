@@ -169,7 +169,7 @@ GOLANG and MYSQL must be installed in order for the program to work
 | LearningObjective | string |
 | Deleted | gorm.DeletedAt |
 
-### Rating Data Structure
+### ModuleTutor Data Structure
 | Attribute | Data Type |
 | --------- | ---- |
 | TutorID | int |
@@ -188,7 +188,7 @@ GOLANG and MYSQL must be installed in order for the program to work
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 # Module Microservice API Documentation
-### [GET] /api/v1/modules/
+## [GET] /api/v1/modules/
 Get all Module
 
 Endpoint
@@ -209,7 +209,7 @@ The response will be a status code 200 is successful, return with all module tha
 ```
 
 
-### [POST] /api/v1/module/create
+## [POST] /api/v1/module/create
 Create Modules
 
 Endpoint
@@ -238,7 +238,7 @@ The response will be a status code 200 is successful, or an 422 Unprocessable En
 ```
 
 
-### [GET] /api/v1/module/{modulecode}
+## [GET] /api/v1/module/{modulecode}
 Get Individual Module
 
 Endpoint
@@ -262,7 +262,7 @@ The response will be a status code 200 is successful, or an error code 422 with 
 ```
 
 
-### [PUT] api/v1/module/assign
+## [PUT] api/v1/module/assign
 This endpoint is used to assign module to tutor
 
 Endpoint
@@ -302,7 +302,7 @@ Response
 The response will be a status code 200 is successful.
 ```
 
-### [PUT] /api/v1/module/change/{modulecode}
+## [PUT] /api/v1/module/change/{modulecode}
 update module by module codes
 
 Endpoint
@@ -331,7 +331,7 @@ The response will be a status code 200 is successful
 ```
 
 
-### [GET] /api/v1/module/tutor/{modulecode}
+## [GET] /api/v1/module/tutor/{modulecode}
 List all of the specific tutor by modulecode
 
 Endpoint
@@ -359,7 +359,7 @@ The response will be a status code 200 is successful
 ```
 
 
-### [GET] /api/v1/module/alltutor/{tutor_id}
+## [GET] /api/v1/module/alltutor/{tutor_id}
 List all of the specific tutor by tutor id
 
 Endpoint
@@ -387,7 +387,7 @@ The response will be a status code 200 is successful
 ```
 
 
-### [GET] /api/v1/module/alltutorname/{name}
+## [GET] /api/v1/module/alltutorname/{name}
 List all of the specific tutor by tutor name
 
 Endpoint
@@ -415,7 +415,7 @@ The response will be a status code 200 is successful
 ```
 
 
-### [DELETE] /api/v1/module/delete/{modulecode}
+## [DELETE] /api/v1/module/delete/{modulecode}
 Delete module by modulecode
 
 Endpoint
@@ -437,7 +437,7 @@ The response will be a status code 200 is successful
 ```
 
 
-### [DELETE] /api/v1/module/deleteassignedtutor/{email}
+## [DELETE] /api/v1/module/deleteassignedtutor/{email}
 Delete assigned tutors in the moduletutor table
 
 Endpoint
@@ -465,7 +465,7 @@ The response will be a status code 200 is successful
 ```
 
 
-### [PUT] /api/v1/module/tutor/updateassignedtutor/{email}
+## [PUT] /api/v1/module/tutor/updateassignedtutor/{email}
 Update assigned tutors in the moduletutor table
 
 Endpoint
