@@ -152,6 +152,7 @@ GOLANG and MYSQL must be installed in order for the program to work
 
 # Module Microservice API Documentation
 ### [GET] /api/v1/modules/
+Get all Module
 
 Endpoint
 http://10.31.11.12:9141/api/v1/modules/
@@ -171,18 +172,33 @@ The response will be a status code 200 is successful, return with all module tha
 ```
 
 
-
-
-
-
-### [GET] /api/v1/tutor/profile/{TutorID}
-Get tutor by TutorID
+### [GET] /api/v1/module/create
+Create Modules
 
 Endpoint
-http://10.31.11.12:9031/api/v1/tutor/profile/{TutorID}
+http://10.31.11.12:9141/api/v1/modules/
+| Name  | Type | Required| Description |
+| ------| ---- | ------- | ----------- |
+|modulecode|string|notrequired|Module Code Eg. CM, ADB, PRG1|
+|modulename|string|notrequired|An module name that matched with module code|
+|synopis|string|notrequired|An brief summary of module|
+|learningobjective|string|notrequired|An summary of learning objective|
+
+Example Request
+```
+cURL:
+curl --location --request POST 'http://localhost:9141/api/v1/module/create' \
+--header 'Content-Type: application/json' \
+--data '{
+    "modulecode": "CM",
+    "modulename": "COMPUTING MATH",
+    "synopis" : "Learn MATH",
+    "learningobjective" : "UNION INTERSEC"
+}'
+
 Response
-Status code 200 if successful, else an error code with a corresponding status message will be returned if unsuccessful. 
-Tutor 
+The response will be a status code 200 is successful, or an 422 Unprocessable Entity if the same module has already existed
+```
 
 
 
