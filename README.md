@@ -48,15 +48,14 @@ and assign modules to tutors.
 
 
 <!-- Assignment Objective-->
-## #AssignmentObjectives
+## Assignment Objectives
 * To demonstrate ability to implement microservices with REST APIs in containers
 * To demonstrate ability to work with multiple teams in designing and implementing microservice architecture
 
 
-## DesignConsiderationsforthemicroservices
-* The microservices have been created in such a way that they are uniquely individual.
-* An example would be the passenger microservice, which was created solely for passengers and database communication.
-* The same can be said for the rest of the microservices, such as Trip, which can only communicate with Trip database, and Driver, which can only communicate with Driver database.
+## Design Considerations for the microservices
+Module Microservice allows anyone that requires the usage of module to be able to get all information regarding the module and also assigned tutor.
+To ensure that the front-end is capable of displaying any necessary data that may be linked to other microservices. The back-end microservice would be linked Tutor microservice, in order to assign available tutor to created module 
 
 Gorm, is an object-relational mapping (ORM) library for dealing with relational databases. The database/sql package is used to build this gorm library. an example would be instead of using query when excuting a SQL line, instead using GORM it simplifies the execution and insertion of data in the table. Another example of using GORM is simplifying the database creation, if the table does not exist, GORM can also be used for the initial migration,creation of the database table is automatically created upon launching the API thus making database migration easier.
 
