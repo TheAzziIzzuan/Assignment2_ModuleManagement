@@ -87,7 +87,7 @@ function getTutor() { //get Tutor using api
     dropdown.add(defaultOption);
     dropdown.selectedIndex = 0;
 
-    const url = "http://10.31.11.12:9181/api/v1/GetAllTutor";
+    const url = "http://10.31.11.12:9181/api/v1/tutor/GetAllTutor";
 
     fetch(url)
         .then(function(response) {
